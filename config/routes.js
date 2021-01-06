@@ -19,7 +19,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+  '/': { view: 'layouts/home' },
+  //'GET /': '/layouts/home',
+  'POST /user/register': 'user/register'
+  /*'GET /': 'pages/signup'*/
 
 
   /***************************************************************************
@@ -32,6 +35,5 @@ module.exports.routes = {
   * not match any of those, it is matched against static assets.             *
   *                                                                          *
   ***************************************************************************/
-
 
 };

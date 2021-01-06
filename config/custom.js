@@ -19,4 +19,7 @@ module.exports.custom = {
   // stripeSecret: 'sk_test_Zzd814nldl91104qor5911gjald',
   // …
 
+  // 24 hour expiration time of email token in register.js
+  emailProofTokenTTL: 24 * 60 * 60 * 1000, 
+
 };
