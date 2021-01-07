@@ -20,9 +20,11 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'layouts/home' },
-  //'GET /': '/layouts/home',
+
+  'GET /user/confirm': 'user/confirm',
+
   'POST /user/register': 'user/register'
-  /*'GET /': 'pages/signup'*/
+  
 
 
   /***************************************************************************
