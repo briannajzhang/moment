@@ -18,7 +18,9 @@ module.exports = {
 
   exits: {
     success: {
-      description: "Email address confirmed and requesting user logged in.",
+      responseType: 'view',
+      viewTemplatePath: 'layouts/success_page',
+      //description: "Email address confirmed and requesting user logged in.",
     },
     invalidOrExpiredToken: {
       statusCode: 400,

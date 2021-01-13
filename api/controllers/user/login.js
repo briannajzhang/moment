@@ -23,7 +23,9 @@ module.exports = {
 
   exits: {
     success: {
-      description: "Login successful",
+      responseType: 'view',
+      viewTemplatePath: 'layouts/feed'
+      //description: "Login successful",
     },
     notAUser: {
       statusCode: 404,

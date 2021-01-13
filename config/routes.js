@@ -21,6 +21,7 @@ module.exports.routes = {
 
   '/': { view: 'layouts/home' },
   '/signup': { view: 'layouts/signup_page' },
+  '/login': { view: 'layouts/login_page' },
 
 
   '/homepage': { view: 'layouts/homepage' },

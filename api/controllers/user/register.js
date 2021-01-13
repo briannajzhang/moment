@@ -24,8 +24,10 @@ module.exports = {
 
   exits: {
     success: {
-      statusCode: 201,
-      description: 'New user created',
+      responseType: 'view',
+      viewTemplatePath: 'layouts/success_page'
+      //statusCode: 201,
+      //description: 'New user created',
     }, 
     emailAlreadyInUse: {
       statusCode: 400,
@@ -72,11 +74,13 @@ module.exports = {
 
       // All done.
       return exits.success({
-        message: `An account has been created for ${newUser.email} successfully. Check your email to verify`,
+        
+        
+        //message: `An account has been created for ${newUser.email} successfully. Check your email to verify`,
       });
 
     } catch (error) {
-      if (error.code === 'E_UNIQUE') {
+      if (error.code == 'E_UNIQUE') {
         return exits.emailAlreadyInUse({
           message: 'Oops :) an error occurred',
           error: 'This email address already exits',
