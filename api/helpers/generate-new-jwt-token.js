@@ -26,22 +26,17 @@ module.exports = {
   },
 
 
-  fn: async function (inputs, exits) {
+  fn: async function (inputs) {
     // TODO
     const payload = {
       sub: inputs.subject, // subject
-      iss: "LogRocket Sails API" // issuer
+      iss: "NOTE IT Web Application" // issuer
     };
 
     const secret = sails.config.jwtSecret || process.env.JWT_SECRET;
     const token = jwt.sign(payload, secret, { expiresIn: "1d" });
 
     return token; 
-
-
-
   }
-
-
 };
 
