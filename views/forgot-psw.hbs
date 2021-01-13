@@ -14,7 +14,7 @@
             background-color: rgb(76, 119, 175);
             color: #fff !important;
             font-weight: bold;
-            padding: 10px 20px;
+            padding: 10px 20px !important;
             border-radius: 5px;
             margin: 0 auto;
         }
@@ -28,12 +28,18 @@
 </head>
 <body>
     <section class="hero">
-        <h1 class="title">Welcome, {{ name }}</h1>
+        <h1 class="title">Reset Password {{ name }}?</h1>
     </section>
     <main>
-        <p>Please confirm your account by clicking the button below:</p>
-        <a class="cta" href="{{confirmLink}}" target="_blank">Confirm email</a>
-        <p>Once confirmed, you'll be able to log in.</p>
+        <p>
+            Someone requested a password reset for your account. If this was not
+            you, please disregard this email. Otherwise, simply click the link
+            below and enter your token and new password.
+
+            <p style="font-weight: bold;">Token: {{ CODE }}</p>
+            <a class="cta" href="{{recoverLink}}" target="_blank">Reset password</a>
+        </p>
+
     </main>
     <footer>
         <p>🖤 Love, the Note It Team 🖤</p>

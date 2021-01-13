@@ -19,7 +19,7 @@ module.exports = {
   exits: {
     success: {
       responseType: 'view',
-      viewTemplatePath: 'layouts/success_page',
+      viewTemplatePath: 'layouts/general/success_page',
       //description: "Email address confirmed and requesting user logged in.",
     },
     invalidOrExpiredToken: {

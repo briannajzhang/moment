@@ -25,7 +25,7 @@ module.exports = {
   exits: {
     success: {
       responseType: 'view',
-      viewTemplatePath: 'layouts/success_page'
+      viewTemplatePath: 'layouts/genera/success_page'
       //statusCode: 201,
       //description: 'New user created',
     }, 

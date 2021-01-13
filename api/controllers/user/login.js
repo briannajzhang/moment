@@ -24,7 +24,7 @@ module.exports = {
   exits: {
     success: {
       responseType: 'view',
-      viewTemplatePath: 'layouts/feed'
+      viewTemplatePath: 'layouts/user_related/feed'
       //description: "Login successful",
     },
     notAUser: {

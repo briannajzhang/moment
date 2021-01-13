@@ -21,5 +21,6 @@ module.exports.custom = {
 
   // 24 hour expiration time of email token in register.js
   emailProofTokenTTL: 24 * 60 * 60 * 1000, 
+  passwordResetTokenTTL: 24 * 60 * 60 * 1000, // 24 hours
 
 };

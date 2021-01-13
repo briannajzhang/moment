@@ -23,7 +23,7 @@ html {
     font-weight: lighter; 
 }
 
-/* Sign Up Page and Login Page */ 
+/* Sign Up Page, Login Page, Forgot Password Page */ 
 #form {
     /* centers section */
     position: fixed;
@@ -48,7 +48,7 @@ html {
     border: solid 1px #3D546A;
     border-radius: 2px; 
     /* width: 100px; */
-    margin: 0 auto; 
+    /* margin: 0 auto; */
 
     font-family: Helvetica;
     font-weight: bolder; 
