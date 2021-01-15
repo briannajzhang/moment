@@ -8,10 +8,14 @@ module.exports = {
 
 
   inputs: {
-    email: {
+    username: {
       type: "string",
       required: true,
     },
+    /*email: {
+      type: "string",
+      required: true,
+    },*/
 
     password: {
       type: "string",
@@ -44,11 +48,11 @@ module.exports = {
 
   fn: async function (inputs, exits) {
     try {
-      const user = await User.findOne({ email: inputs.email });
+      const user = await User.findOne({ username: inputs.username /*email: inputs.email*/ });
 
       if (!user) {
         return exits.notAUser({
-          error: `An account belonging to ${inputs.email} was not found`,
+          error: `An account belonging to ${inputs.username/*inputs.email*/} was not found`,
         });
       }
 
@@ -63,7 +67,7 @@ module.exports = {
       this.req.me = user;
 
       return exits.success({
-        message: `${user.email} has been logged in`,
+        message: `${user.username/*user.email*/} has been logged in`,
         data: user,
         token,
       });
@@ -73,13 +77,13 @@ module.exports = {
 
       if (error.isOperational) {
         return exits.operationalError({
-          message: `Error logging in user ${inputs.email}`,
+          message: `Error logging in user ${inputs.username/*inputs.email*/}`,
           error: error.raw,
         });
       }
 
       return exits.error({
-        message: `Error logging in user ${inputs.email}`,
+        message: `Error logging in user ${inputs.username/*inputs.email*/}`,
         error: error.message,
       });
     }

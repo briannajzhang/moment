@@ -25,7 +25,7 @@ module.exports.routes = {
   '/forgot': { view: 'layouts/reset/forgot_page' },
   '/reset': { view: 'layouts/reset/reset_page' },
 
-  '/homepage': { view: 'layouts/homepage' },
+  '/home': { view: 'layouts/user_related/feed' },
 
   'GET /user/confirm': 'user/confirm',
 

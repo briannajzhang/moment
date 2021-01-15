@@ -29,10 +29,16 @@ module.exports = {
       required: true,
       columnName: 'full_name'
     },
+    username: {
+      type: 'string', 
+      required: true,
+      unique: true,
+      columnName: 'user_name'
+    },
     email: {
       type: 'string',
       required: true,
-      //unique: true,
+      unique: true,
     },
     emailStatus: {
       type: 'string',
@@ -63,7 +69,7 @@ module.exports = {
     passwordResetTokenExpiresAt: {
       type: 'number',
       description:
-        'A timestamp representing the moment when this user\'s `passwordResetToken` will expire (or 0 if the user currently has no such token).',
+        'A timestamp representing the MOMENT when this user\'s `passwordResetToken` will expire (or 0 if the user currently has no such token).',
       example: 1508944074211,
       columnName: 'password_reset_token_expires_at',
     },

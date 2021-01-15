@@ -1,5 +1,6 @@
 html {
-    background-color: rgb(180, 213, 219)
+    background-color: rgb(180, 213, 219);
+    color: rgb(35, 49, 61);
 }
 
 /* Home Page */
@@ -13,11 +14,12 @@ html {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-68%, -50%);
+    transform: translate(-50%, -200%);
     
     text-align: center; 
 
-    color: #3D546A; 
+    /*color: white; */
+    color: rgb(35, 49, 61);
 
     font-family: Helvetica; 
     font-weight: lighter; 
@@ -29,13 +31,13 @@ html {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -67%);
 
     display: block;
 
     text-align: center;
 
-    color: #3D546A;
+    color: rgb(35, 49, 61);
 
     font-family: Helvetica;
     font-weight: lighter;    
@@ -45,7 +47,7 @@ html {
     display: block; 
     
     font-size: 11px; 
-    border: solid 1px #3D546A;
+    border: solid 1px;
     border-radius: 2px; 
     /* width: 100px; */
     /* margin: 0 auto; */
@@ -54,7 +56,7 @@ html {
     font-weight: bolder; 
     color: white; 
 
-    background-color: #3D546A;
+    background-color: rgb(35, 49, 61);
 }
 
 #form input{
@@ -62,7 +64,7 @@ html {
     width: 300px;
     font-size: 11px;
     padding: 4px 2px;
-    border: solid 1px #aacfe4;
+    border: solid 1px rgb(35, 49, 61);
     border-radius: 5px;
     margin: 10px; 
 
@@ -83,4 +85,19 @@ html {
 
     font-family: Helvetica; 
     font-weight: lighter; 
+}
+
+#user_feed {
+    /* centers section */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center; 
+
+    color: #3D546A; 
+
+    font-family: Helvetica; 
+    font-weight: bolder; 
 }

@@ -9,6 +9,11 @@ module.exports = {
       type: 'string',
       required: true,
     },
+    username: {
+      type: 'string', 
+      required: true,
+      unique: true,
+    },
     email: {
       type: 'string',
       required: true,
@@ -25,13 +30,13 @@ module.exports = {
   exits: {
     success: {
       responseType: 'view',
-      viewTemplatePath: 'layouts/genera/success_page'
+      viewTemplatePath: 'layouts/general/success_page'
       //statusCode: 201,
       //description: 'New user created',
     }, 
-    emailAlreadyInUse: {
+    alreadyInUse: {
       statusCode: 400,
-      description: 'Email address already in use',
+      description: 'Email address and/or username is already in use',
     },
     error: {
       description: 'Oops! Something went wrong',
@@ -49,6 +54,7 @@ module.exports = {
       // New user record
       let newUser = await User.create({
         fullName: inputs.fullName,
+        username: inputs.username,
         email: newEmailAddress,
         password: inputs.password,
         emailProofToken: token,
@@ -63,7 +69,7 @@ module.exports = {
       // Set up and send confirmation email
       const email = {
         to: newUser.email,
-        subject: 'Note It: Confirm Your Account',
+        subject: 'MOMENT: Confirm Your Account',
         template: 'confirm',
         context: {
           name: newUser.fullName,
@@ -80,10 +86,12 @@ module.exports = {
       });
 
     } catch (error) {
+      if (error.code == '')
+
       if (error.code == 'E_UNIQUE') {
-        return exits.emailAlreadyInUse({
+        return exits.alreadyInUse({
           message: 'Oops :) an error occurred',
-          error: 'This email address already exits',
+          error: 'This email address and/or username already exits',
         });
       }
 

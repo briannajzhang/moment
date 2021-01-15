@@ -53,7 +53,7 @@ module.exports = {
 
     const email = {
       to: user.email,
-      subject: "Note It: Reset Password",
+      subject: "MOMENT: Reset Password",
       template: "forgot-psw",
       context: {
         name: user.fullName,

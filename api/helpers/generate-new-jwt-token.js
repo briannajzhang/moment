@@ -30,7 +30,7 @@ module.exports = {
     // TODO
     const payload = {
       sub: inputs.subject, // subject
-      iss: "NOTE IT Web Application" // issuer
+      iss: "MOMENT Web Application" // issuer
     };
 
     const secret = sails.config.jwtSecret || process.env.JWT_SECRET;
