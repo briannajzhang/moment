@@ -33,8 +33,18 @@ module.exports.routes = {
   'POST /user/login': 'user/login',
   'POST /user/forgot-password': 'user/forgot-password',
   'POST /user/reset-password': 'user/reset-password',
-  
 
+  // Managing user posts 
+  
+  //'POST /posts/feed': 'feed.create',
+  //'GET /post/:postId': 'feed.findById',
+  'GET /post': 'feed.posts',
+  'POST /posts/create': 'posts/create',
+  //'DELETE /posts/delete': 'posts/delete',
+  'DELETE /posts/:postId': 'posts/delete',
+
+
+  
 
   /***************************************************************************
   *                                                                          *

@@ -86,8 +86,6 @@ module.exports = {
       });
 
     } catch (error) {
-      if (error.code == '')
-
       if (error.code == 'E_UNIQUE') {
         return exits.alreadyInUse({
           message: 'Oops :) an error occurred',
