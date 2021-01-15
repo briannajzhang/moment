@@ -1,21 +1,58 @@
-<div id="home_page">
-    <img src="https://images.unsplash.com/photo-1487260211189-670c54da558d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1pbmltYWwlMjBiYWNrZ3JvdW5kJTIwYXJ0fGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"  />
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            img {
+                width: 100%;
+                height: 100%; 
+            }
 
-<form action="/user/register", method="POST">
-    <div id="form">
+            body {
+                background-color: rgb(180, 213, 219);
+                color: rgb(35, 49, 61);
+                display: block;
+                font-family: Helvetica;
+                text-align: center;
+            }
 
-        <h1 style="letter-spacing: 4px;"> MOMENT </h1>
-        <p>Sign up to start documenting!</p>
+            form {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -67%);
+                font-size: 11px; 
+                font-weight: lighter;
+            }
 
-        <input type="text" placeholder="Full Name" name="fullName" required>
+            input{
+                border: solid 1px rgb(35, 49, 61);
+                border-radius: 5px;
+                margin: 10px; 
+                padding: 4px 2px;
+                width: 300px;
+            }
+        </style>
 
-        <input type="text" placeholder="Username" name="username" required>
+    </head>
+    <body>
+        <img src="https://images.unsplash.com/photo-1487260211189-670c54da558d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1pbmltYWwlMjBiYWNrZ3JvdW5kJTIwYXJ0fGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"/>
 
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <form action="/user/register", method="POST">
+            <h1 style="letter-spacing: 4px;"> MOMENT </h1>
+            <p style="font-size: 16px;">Sign up to start documenting!</p>
 
-        <input type="password" placeholder="Enter Password" name="password" required>
+            <input type="text" placeholder="Full Name" name="fullName" required>
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="text" placeholder="Enter Email" name="email" required>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <input type="submit" name="register" value="Sign Up" style="background-color:rgb(35, 49, 61); color: white">
 
-        <input type="submit" name="register" value="Sign Up" style="background-color: rgb(35, 49, 61); color: white"/>
-    </div>
-</form>
+        </form>
+    </body>
+</html>
+
+
+
+  
+
+        

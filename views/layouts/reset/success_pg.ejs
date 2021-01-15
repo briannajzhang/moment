@@ -1,8 +1,31 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="/assets/styles/standard.css">
+<html>
+    <head>
+        <style>
+            body {
+                background-color: rgb(180, 213, 219);
+                display: block;
 
-<div id="success_page">
-    <h1 style="letter-spacing: 4px;">EMAIL SENT!</h1>
-    
-    <p>Check your email for a password reset link.</p>
-</div>
+                text-align: center;
+
+                font-family: Helvetica;
+                font-weight: lighter;
+            }
+
+            #block {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="block">
+            <h1 style="letter-spacing: 4px;">EMAIL SENT!</h1>
+            <p>Check your email for a password reset link.</p>
+        </div>
+
+    </body>
+</html>

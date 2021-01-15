@@ -1,15 +1,48 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="/assets/styles/standard.css">
+<html>
+    <head>
+        <style>
+            body {
+                background-color: rgb(180, 213, 219);
+                
+                color: rgb(35, 49, 61);
+                display: block;
 
-<form action="/user/forgot-password", method="POST">
-    <div id="form">
+                text-align: center;
 
-        <h1 style="letter-spacing: 4px;">MOMENT</h1>
-        <p>Enter your email to receive a link to reset your password.</p>
+                font-family: Helvetica;
+                font-weight: lighter;
+            }
 
-        <input type="email" placeholder="Email" name="email" required >
+            form {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -67%);
+                font-size: 11px; 
+            }
 
-        <input type="submit" name="reset" value="Send Link" style="background-color: rgb(35, 49, 61); color: white;"/>
+            input{
+                border: solid 1px rgb(35, 49, 61);
+                border-radius: 5px;
+                margin: 10px; 
+                padding: 4px 2px;
+                width: 300px;
+                font-weight: lighter;
+            }
+        </style>
+    </head>
 
-    </div>
-</form>
+    <body>
+        <form action="/user/forgot-password", method="POST">
+            <h1 style="letter-spacing: 4px;">MOMENT</h1>
+            <p style="font-size: 16px;">Enter your email to receive a link to reset your password.</p>
+    
+            <input type="email" placeholder="Email" name="email" required >
+            <input type="submit" name="reset" value="Send Link" style="background-color: rgb(35, 49, 61); color: white;"/>
+        </form>
+    </body>
+</html>
+
+
+    

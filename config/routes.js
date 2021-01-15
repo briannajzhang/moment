@@ -25,7 +25,9 @@ module.exports.routes = {
   '/forgot': { view: 'layouts/reset/forgot_page' },
   '/reset': { view: 'layouts/reset/reset_page' },
 
-  '/home': { view: 'layouts/user_related/feed' },
+  //'GET /home': { view: 'layouts/user_related/feed_page' },
+
+  'GET /feed': 'posts/feed',
 
   'GET /user/confirm': 'user/confirm',
 
@@ -38,10 +40,13 @@ module.exports.routes = {
   
   //'POST /posts/feed': 'feed.create',
   //'GET /post/:postId': 'feed.findById',
+
   'GET /post': 'feed.posts',
   'POST /posts/create': 'posts/create',
   //'DELETE /posts/delete': 'posts/delete',
   'DELETE /posts/:postId': 'posts/delete',
+
+  'GET /feed': 'posts/feed',
 
 
   

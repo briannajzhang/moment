@@ -1,13 +1,17 @@
 <html>
-    <body>
-        This will show a list of our posts
+    <div id="feed">
+        <body>
+            This will show a list of our posts
 
-        <div>
-            <div>post title</div>
-            <div>post body</div>
-        </div>
+            <div>
 
-    </body>
+                <% allPosts.forEach(p => { %>
+                    <div><%= p.title %></div>
+                    <div><%= p.body %></div>
+                <% }) %>
+                
+            </div>
 
-
+        </body>
+    </div>
 </html>
