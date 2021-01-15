@@ -1,21 +1,12 @@
 module.exports = {
-
-
   friendlyName: 'Login',
-
-
   description: 'Login user.',
-
 
   inputs: {
     username: {
       type: "string",
       required: true,
     },
-    /*email: {
-      type: "string",
-      required: true,
-    },*/
 
     password: {
       type: "string",
@@ -24,12 +15,10 @@ module.exports = {
 
   },
 
-
   exits: {
     success: {
       responseType: 'view',
       viewTemplatePath: 'layouts/user_related/feed'
-      //description: "Login successful",
     },
     notAUser: {
       statusCode: 404,
@@ -42,17 +31,16 @@ module.exports = {
     operationalError: {
       statusCode: 400,
       description: 'The request was formed properly'
-  }
+    }
   },
-
 
   fn: async function (inputs, exits) {
     try {
-      const user = await User.findOne({ username: inputs.username /*email: inputs.email*/ });
+      const user = await User.findOne({ username: inputs.username });
 
       if (!user) {
         return exits.notAUser({
-          error: `An account belonging to ${inputs.username/*inputs.email*/} was not found`,
+          error: `An account belonging to ${inputs.username} was not found`,
         });
       }
 
@@ -67,7 +55,7 @@ module.exports = {
       this.req.me = user;
 
       return exits.success({
-        message: `${user.username/*user.email*/} has been logged in`,
+        message: `${user.username} has been logged in`,
         data: user,
         token,
       });
@@ -77,13 +65,13 @@ module.exports = {
 
       if (error.isOperational) {
         return exits.operationalError({
-          message: `Error logging in user ${inputs.username/*inputs.email*/}`,
+          message: `Error logging in user ${inputs.username}`,
           error: error.raw,
         });
       }
 
       return exits.error({
-        message: `Error logging in user ${inputs.username/*inputs.email*/}`,
+        message: `Error logging in user ${inputs.username}`,
         error: error.message,
       });
     }

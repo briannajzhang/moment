@@ -1,7 +1,5 @@
 module.exports = {
-
     friendlyName: 'Delete',
-  
     description: 'delete post.',
   
     inputs: {

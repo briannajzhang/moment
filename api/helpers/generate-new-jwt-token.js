@@ -1,13 +1,8 @@
 const jwt = require("jsonwebtoken");
 
 module.exports = {
-
-
   friendlyName: 'Generate new jwt token',
-
-
   description: '',
-
 
   inputs: {
     subject: {
@@ -16,18 +11,13 @@ module.exports = {
     }
   },
 
-
   exits: {
-
     success: {
       description: 'All done.',
     },
-
   },
 
-
   fn: async function (inputs) {
-    // TODO
     const payload = {
       sub: inputs.subject, // subject
       iss: "MOMENT Web Application" // issuer

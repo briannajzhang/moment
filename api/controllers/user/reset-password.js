@@ -1,11 +1,6 @@
 module.exports = {
-
-
   friendlyName: 'Reset password',
-
-
   description: '',
-
 
   inputs: {
     password: {
@@ -21,7 +16,6 @@ module.exports = {
       required: true,
     },
   },
-
 
   exits: {
     success: {
@@ -75,8 +69,5 @@ module.exports = {
       data: user,
       token,
     });
-
   }
-
-
 };

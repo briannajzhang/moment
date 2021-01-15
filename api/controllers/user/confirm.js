@@ -1,11 +1,6 @@
 module.exports = {
-
-
   friendlyName: 'Confirm',
-
-
   description: 'Confirm user.',
-
 
   inputs: {
     token: {
@@ -15,12 +10,10 @@ module.exports = {
     },
   },
 
-
   exits: {
     success: {
       responseType: 'view',
       viewTemplatePath: 'layouts/general/success_page',
-      //description: "Email address confirmed and requesting user logged in.",
     },
     invalidOrExpiredToken: {
       statusCode: 400,
@@ -28,7 +21,6 @@ module.exports = {
         "The provided token is expired, invalid, or already used up.",
     },
   },
-
 
   fn: async function (inputs, exits) {
     // Checks if request does not contain a token parameter
@@ -51,15 +43,13 @@ module.exports = {
     // Check email confirmation status
     if (user.emailStatus === "unconfirmed") {
       await User.updateOne({ id: user.id }).set({
-      emailStatus: "confirmed",
-      emailProofToken: "",
-      emailProofTokenExpiresAt: 0,
-    });
-    return exits.success({
-      message: "Your account has been confirmed",
-    });
+        emailStatus: "confirmed",
+        emailProofToken: "",
+        emailProofTokenExpiresAt: 0,
+      });
+      return exits.success({
+        message: "Your account has been confirmed",
+      });
+    }
   }
-  }
-
-
 };

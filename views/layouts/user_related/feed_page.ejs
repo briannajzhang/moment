@@ -1,17 +1,32 @@
+<!DOCTYPE html>
 <html>
-    <div id="feed">
-        <body>
-            This will show a list of our posts
+    <head>
+        <style>
+            body {
+                background-color: rgb(180, 213, 219);
+                color: rgb(35, 49, 61);
 
-            <div>
+                display: block;
+                font-family: Helvetica;
+                text-align: center;
 
-                <% allPosts.forEach(p => { %>
-                    <div><%= p.title %></div>
-                    <div><%= p.body %></div>
-                <% }) %>
-                
-            </div>
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -350%);
+            }
 
-        </body>
-    </div>
+        </style>
+    </head>
+
+    <body>
+        This will show a list of our posts.
+
+        <div>
+            <% allPosts.forEach(p => { %>
+                <div>Post Title: <%= p.title %></div>
+                <div>Post Body: <%= p.body %></div>
+            <% }) %>
+        </div>
+    </body>
 </html>

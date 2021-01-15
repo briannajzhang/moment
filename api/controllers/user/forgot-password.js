@@ -1,11 +1,6 @@
 module.exports = {
-
-
   friendlyName: 'Forgot password',
-
-
   description: '',
-
 
   inputs: {
     email: {
@@ -17,7 +12,6 @@ module.exports = {
     },
   },
 
-
   exits: {
     success: {
       responseType: 'view',
@@ -28,7 +22,6 @@ module.exports = {
       description: "The email is invalid",
     }
   },
-
 
   fn: async function (inputs, exits) {
     var user = await User.findOne({ email: inputs.email });

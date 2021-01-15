@@ -9,6 +9,7 @@ module.exports = async function(req, res) {
     })
   },*/
 
+
   const allPosts = await Post.find()
 
   console.log("This route shows home page of posts")

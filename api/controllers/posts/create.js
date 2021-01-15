@@ -1,7 +1,5 @@
 module.exports = {
-
     friendlyName: 'Create',
-  
     description: 'Create post.',
   
     inputs: {
@@ -27,12 +25,11 @@ module.exports = {
 
     fn: async function (inputs, exits) {
         try {
-            // New post record
+            // New post recorded
             await Post.create({
                 title: inputs.title,
                 body: inputs.body,
             });
-
             return exits.success({});
 
         } catch (error) {

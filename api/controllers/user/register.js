@@ -1,7 +1,5 @@
 module.exports = {
-
   friendlyName: 'Register',
-
   description: 'Register user.',
 
   inputs: {
@@ -31,8 +29,6 @@ module.exports = {
     success: {
       responseType: 'view',
       viewTemplatePath: 'layouts/general/success_page'
-      //statusCode: 201,
-      //description: 'New user created',
     }, 
     alreadyInUse: {
       statusCode: 400,
@@ -65,7 +61,6 @@ module.exports = {
       // Confirm link sent to user
       const confirmLink = `http://localhost:1337/user/confirm?token=${token}`;
       
-
       // Set up and send confirmation email
       const email = {
         to: newUser.email,
@@ -80,9 +75,7 @@ module.exports = {
 
       // All done.
       return exits.success({
-        
-        
-        //message: `An account has been created for ${newUser.email} successfully. Check your email to verify`,
+        message: `An account has been created for ${newUser.email} successfully. Check your email to verify`,
       });
 
     } catch (error) {
