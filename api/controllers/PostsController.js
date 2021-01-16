@@ -8,7 +8,7 @@ module.exports = {
         }
     },
 
-    create: function (req, res) {
+    /*create: function (req, res) {
         const title = req.body.title
         const postBody = req.body.postBody
 
@@ -21,7 +21,7 @@ module.exports = {
             }
             return res.redirect('/feed')
         })
-    },
+    },*/
 
     findById: function(req, res) {
         const postId = req.param('postId')
@@ -33,12 +33,11 @@ module.exports = {
             res.send('Failed to find post by id: ' + postId)
         }
     },
-
+/*
     delete: async function(req, res) {
         const postId = req.param('postId')
-
         await Post.destroy({id: postId})
         res.send('Finished deleting post')
-    }
+    }*/
 };
 
