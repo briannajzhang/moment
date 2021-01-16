@@ -5,27 +5,53 @@
             body {
                 background-color: rgb(180, 213, 219);
                 color: rgb(35, 49, 61);
-
-                display: block;
                 font-family: Helvetica;
-                text-align: center;
+            }
 
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -350%);
+            form {
+                text-align: center;
+            }
+
+            input{
+                border: solid 1px rgb(35, 49, 61);
+                border-radius: 5px;
+                font-weight: lighter;
+                font-size: 11px; 
+            }
+
+            h1 {
+                text-align: center;
+                letter-spacing: 4px; 
+                transform: translate(0%, 10%);
+            }
+
+            #post-container {
+                background-color: white; 
+                margin: 16px; 
+                padding: 16px; 
+                border: solid 1px rgb(35, 49, 61);
+                border-radius: 5px;
             }
 
         </style>
     </head>
 
     <body>
-        This will show a list of our posts.
+
+        <h1>MOMENTS</h1>
+
+        <form action="/post", method="POST">
+            <input type="text" placeholder="Title" name="title" required style="width:150px;">
+            <input type="text" placeholder="Body" name="postBody" required style="width:200px;">
+            <input type="submit" name="loginbtn" value="Create" style="background-color:rgb(35, 49, 61); color: white;" />
+        </form>
 
         <div>
             <% allPosts.forEach(p => { %>
-                <div>Post Title: <%= p.title %></div>
-                <div>Post Body: <%= p.body %></div>
+                <div id="post-container">
+                    <div style="font-weight: bold; font-size: 18px;"><%= p.title %></div>
+                    <div style="font-weight: lighter;"><%= p.body %></div>
+                </div>
             <% }) %>
         </div>
     </body>

@@ -24,10 +24,11 @@ module.exports.routes = {
   '/login': { view: 'layouts/general/login_page' },
   '/forgot': { view: 'layouts/reset/forgot_page' },
   '/reset': { view: 'layouts/reset/reset_page' },
+  '/create-new-post': { view: 'layouts/user_related/create_page' },
 
   //'GET /home': { view: 'layouts/user_related/feed_page' },
 
-  'GET /feed': 'posts/feed',
+  //'GET /feed': 'posts/feed',
 
   'GET /user/confirm': 'user/confirm',
 
@@ -37,18 +38,13 @@ module.exports.routes = {
   'POST /user/reset-password': 'user/reset-password',
 
   // Managing user posts 
-  
-  //'POST /posts/feed': 'feed.create',
-  //'GET /post/:postId': 'feed.findById',
-
-  'GET /post': 'feed.posts',
-  'POST /posts/create': 'posts/create',
-  //'DELETE /posts/delete': 'posts/delete',
-  'DELETE /posts/:postId': 'posts/delete',
-
   'GET /feed': 'posts/feed',
 
+  '/all-posts': 'PostsController.posts',
 
+  'GET /post/:postId': 'PostsController.findById',
+  'POST /post': 'PostsController.create',
+  'DELETE /post/:postId': 'PostsController.delete',
   
 
   /***************************************************************************
