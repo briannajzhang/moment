@@ -71,7 +71,7 @@
         <h1>MOMENTS</h1>
         <h1 style="font-size:14px;">
             <a href="/create-post" title="Create a new moment" style="color:rgb(35, 49, 61); text-align:center;">+</a>
-            <a href="/delete-post" title="Create a new moment" style="color:rgb(35, 49, 61); text-align:center;">-</a>
+            <a href="/delete-post" title="Delete an old moment" style="color:rgb(35, 49, 61); text-align:center;">-</a>
         </h1>
 
         <div>
@@ -80,12 +80,6 @@
                     <div style="font-weight: bold; font-size: 18px;"><%= p.title %></div>
                     <div style="font-weight: lighter;"><%= p.body %></div>
                     <div style="font-weight: light; font-size: 8px; text-align:right; transform: translate(0%, 50%);">ID: <%= p.id %></div>
-                    
-                   
-                    <!-- <button id='<%= p.id %>' onclick="handleDeletePost(event)" style="font-family:Helvetica; font-size:9px;
-                        border: solid 1px rgb(35, 49, 61); background-color: rgb(180, 213, 219); border-radius: 5px;">
-                        Edit
-                    </button> -->
                     
                 </div>
             <% }) %>

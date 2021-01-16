@@ -18,7 +18,7 @@ module.exports = {
   exits: {
     success: {
       responseType: 'view',
-      viewTemplatePath: 'layouts/user_related/feed_page'
+      viewTemplatePath: 'layouts/user_related/success_page'
     },
     notAUser: {
       statusCode: 404,
