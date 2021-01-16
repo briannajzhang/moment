@@ -15,17 +15,30 @@ module.exports = {
   },
 
   exits: {
-
+    success: {
+      statusCode: 201,
+      description: 'New post created',
+    }, 
+    error: {
+      description: 'Oops! Something went wrong',
+    },
   },
 
+  fn: async function (inputs, exits) {
+      try {
+          // New post record
+          await Post.create({
+              title: inputs.title,
+              body: inputs.postBody,
+          });
 
-  fn: async function (inputs) {
-    await Post.create({title: inputs.title, body: inputs.postBody})
+          return exits.success({});
 
-    // All done.
-    return;
-
+      } catch (error) {
+          return exits.error({
+              message: 'Oops :( an error occurred',
+              error: error.message,
+          });
+      }
   }
-
-
 };

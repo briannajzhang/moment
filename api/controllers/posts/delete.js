@@ -4,28 +4,36 @@ module.exports = {
 
   inputs: {
     postId: {
-      type: 'string',
-      required: true
+        type: 'number',
+        required: true,
     }
-
   },
 
   exits: {
-    invalid: {
-      description: 'This was an invalid post to delete'
-    }
+    success: {
+      statusCode: 200,
+      description: 'Post deleted',
+    }, 
+    error: {
+      description: 'Oops! Something went wrong',
+    },
   },
 
-  fn: async function (inputs) {
-    const record = await Post.destroy({id: inputs.postId}).fetch()
-    if (record.length == 0) {
-      throw({invalid: {error: 'Record does not exist'}})
-    }
+  fn: async function (inputs, exits) {
+      try {
+          const postId = inputs.postId
+          await Post.destroy({id: postId});
 
-    // All done.
-    return record;
+          return exits.success({
+              message: 'Post should be deleted!'
+          });
 
+      } catch (error) {
+          return exits.error({
+              message: 'Oops :( an error occurred',
+              error: error.message,
+          });
+      }
   }
-
-
+};
 };
