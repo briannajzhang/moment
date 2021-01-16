@@ -16,8 +16,9 @@ module.exports = {
 
   exits: {
     success: {
-      statusCode: 201,
-      description: 'New post created',
+      responseType: 'view',
+      viewTemplatePath: 'layouts/user_related/success_page',
+      message: 'Success!',
     }, 
     error: {
       description: 'Oops! Something went wrong',
@@ -32,7 +33,9 @@ module.exports = {
               body: inputs.postBody,
           });
 
-          return exits.success({});
+          return exits.success({
+            message: 'Congrats! Moment successfully created.'
+          })
 
       } catch (error) {
           return exits.error({

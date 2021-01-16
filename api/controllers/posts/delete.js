@@ -4,13 +4,15 @@ module.exports = {
 
   inputs: {
     postId: {
-        type: 'number',
+        type: 'string',
         required: true,
     }
   },
 
   exits: {
     success: {
+      responseType: 'view',
+      viewTemplatePath: 'layouts/user_related/success_page',
       statusCode: 200,
       description: 'Post deleted',
     }, 
@@ -35,5 +37,4 @@ module.exports = {
           });
       }
   }
-};
 };

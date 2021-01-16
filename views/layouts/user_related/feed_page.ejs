@@ -34,49 +34,58 @@
             }
 
         </style>
-    </head>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <script>
-        async function handleDeletePost(e) {
-            consolde.log("Deleting post...")
-            console.log(e.target.id)
-
-            const postId = e.target.id
-            const url = '/post' + postId
-
-            try {
-                const response = await axios.delete(url)
-                console.log(response)
-                location.reload()
-            } catch (error) {
-                console.error(err.toString())
-                alert(err.toString())
+        <script type="text/javascript">
+            async function alrighty() {
+                const allPosts = await Post.find();
+                return allPosts;
             }
-        }
-    </script>
+
+            async function handleDeletePost(e) {
+                consolde.log("Deleting post...")
+                console.log(e.target.id)
+
+                const postId = e.target.id
+                const url = '/post' + postId
+
+                try {
+                    const response = await axios.delete(url)
+                    console.log(response)
+                    location.reload()
+                } catch (error) {
+                    console.error(err.toString())
+                    alert(err.toString())
+                }
+            }
+        </script>
+    </head>
 
     <body>
 
+        <script type="text/javascript">
+            const allPosts = alrighty();
+        </script>
+        
         <h1>MOMENTS</h1>
-
-        <form action="/post", method="POST">
-            <input type="text" placeholder="Title" name="title" required style="width:150px;">
-            <input type="text" placeholder="Body" name="postBody" required style="width:200px;">
-            <input type="submit" name="loginbtn" value="Create" style="background-color:rgb(35, 49, 61); color: white;" />
-        </form>
+        <h1 style="font-size:14px;">
+            <a href="/create-post" title="Create a new moment" style="color:rgb(35, 49, 61); text-align:center;">+</a>
+            <a href="/delete-post" title="Create a new moment" style="color:rgb(35, 49, 61); text-align:center;">-</a>
+        </h1>
 
         <div>
             <% allPosts.forEach(p => { %>
                 <div id="post-container">
                     <div style="font-weight: bold; font-size: 18px;"><%= p.title %></div>
                     <div style="font-weight: lighter;"><%= p.body %></div>
+                    <div style="font-weight: light; font-size: 8px; text-align:right; transform: translate(0%, 50%);">ID: <%= p.id %></div>
+                    
                    
-                    <button id='<%= p.id %>' onclick="handleDeletePost(event)" style="font-family:Helvetica; font-size:9px;
+                    <!-- <button id='<%= p.id %>' onclick="handleDeletePost(event)" style="font-family:Helvetica; font-size:9px;
                         border: solid 1px rgb(35, 49, 61); background-color: rgb(180, 213, 219); border-radius: 5px;">
                         Edit
-                    </button>
+                    </button> -->
                     
                 </div>
             <% }) %>

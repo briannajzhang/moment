@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: rgb(180, 213, 219);
+                color: rgb(35, 49, 61);
+                font-family: Helvetica;
+                text-align: center;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -67%);
+            }
+
+            input{
+                border: solid 1px rgb(35, 49, 61);
+                border-radius: 5px;
+                font-weight: lighter;
+                font-size: 11px; 
+                margin: 5px; 
+                width: 50px; 
+                height: 25px; 
+            }
+
+            h1 {
+                text-align: center;
+                letter-spacing: 4px; 
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>MOMENTS</h1>
+        <p>Which post would you like to delete? Enter the post ID.</p>
+
+        <form action="/delete", method="POST">
+            <input type="text" placeholder="Post ID" name="postId" required style="width:300px;">
+            <input type="submit" name="loginbtn" value="Delete" style="background-color:rgb(35, 49, 61); color: white;" />
+        </form>
+    </body>
+</html>

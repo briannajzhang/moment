@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: rgb(180, 213, 219);
+                color: rgb(35, 49, 61);
+                font-family: Helvetica;
+            }
+
+            #container {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -67%);
+                text-align: center;
+            }
+
+            input{
+                border: solid 1px rgb(35, 49, 61);
+                border-radius: 5px;
+                font-weight: lighter;
+                font-size: 11px; 
+                margin: 8px; 
+                width: 50px; 
+                height: 25px; 
+            }
+
+            h1 {
+                text-align: center;
+                letter-spacing: 4px; 
+            }
+
+        </style>
+    </head>
+
+
+    <body>
+        <div id="container">
+            <h1>MOMENT</h1>
+            <h1 style="font-size:16px; letter-spacing: normal;">Create your new moment!</h1>
+
+            <form action="/post", method="POST">
+                <input type="text" placeholder="Title" name="title" required style="width:300px;">
+                <input type="text" placeholder="Body" name="postBody" required style="width:300px;">
+                <input type="submit" name="loginbtn" value="Create" style="background-color:rgb(35, 49, 61); color: white;" />
+            </form>
+        </div>
+    </body>
+</html>

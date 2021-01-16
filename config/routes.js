@@ -24,7 +24,8 @@ module.exports.routes = {
   '/login': { view: 'layouts/general/login_page' },
   '/forgot': { view: 'layouts/reset/forgot_page' },
   '/reset': { view: 'layouts/reset/reset_page' },
-  '/create-new-post': { view: 'layouts/user_related/create_page' },
+  '/create-post': { view: 'layouts/user_related/create_page' },
+  '/delete-post': { view: 'layouts/user_related/delete_page' },
 
   //'GET /home': { view: 'layouts/user_related/feed_page' },
 
@@ -44,7 +45,7 @@ module.exports.routes = {
 
   'GET /post/:postId': 'PostsController.findById',
   'POST /post': 'posts/create',
-  'DELETE /post/:postId': 'posts/delete',
+  'POST /delete': 'posts/delete',
 
   /***************************************************************************
   *                                                                          *
