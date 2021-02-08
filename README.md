@@ -2,6 +2,7 @@
 A web application about sharing the everyday moments in your life! I developed 
 
 ![alt text](images/main.png "images/main.png")
+![alt text](images/login.png "images/login.png")
 ![alt text](images/feed.png "images/feed.png")
 
 ### Dependencies ###
