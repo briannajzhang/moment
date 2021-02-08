@@ -1,8 +1,8 @@
 # MOMENT
 A web application about sharing the everyday moments in your life! I developed 
 
-![alt_text](main.png "images/main.png")
-![alt_text](feed.png "images/feed.png")
+![alt text](images/main.png "images/main.png")
+![alt text](images/feed.png "images/feed.png")
 
 ### Dependencies ###
 * [Node.js](https://nodejs.org/en/download/)
