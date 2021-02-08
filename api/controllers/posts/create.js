@@ -11,7 +11,7 @@ module.exports = {
     postBody: {
       type: 'string',
       required: true,
-    }
+    },
   },
 
   exits: {

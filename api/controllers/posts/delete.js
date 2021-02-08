@@ -23,10 +23,8 @@ module.exports = {
 
   fn: async function (inputs, exits) {
       try {
-          const postId = inputs.postId
-          await Post.destroy({id: postId});
-
-          return exits.success({
+            await Post.destroy({id: inputs.postId }); 
+            return exits.success({
               message: 'Post should be deleted!'
           });
 

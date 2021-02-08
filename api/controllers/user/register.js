@@ -49,6 +49,8 @@ module.exports = {
 
       // New user record
       let newUser = await User.create({
+        currentUser: false, 
+
         fullName: inputs.fullName,
         username: inputs.username,
         email: newEmailAddress,
