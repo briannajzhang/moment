@@ -1,8 +1,5 @@
 # MOMENT
-A web application about sharing the everyday moments in your life! I developed 
-
-![alt text](images/home.png "images/home.png")
-![alt text](images/feed.png "images/feed.png")
+A web application about sharing the everyday moments in your life! I created this project because I wanted to learn more about front-end development and how that ties into back-end development, and I thought it would be interesting to create a project that reflected posting about everyday life like most social media applications.
 
 ### Dependencies ###
 * [Node.js](https://nodejs.org/en/download/)
